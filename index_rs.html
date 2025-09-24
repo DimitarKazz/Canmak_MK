@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CANMAK-MK | Rudarske mašine | Drobilice | Oprema za rudarstvo</title>
+    <meta name="description" content="CANMAK-MK - Proizvođač rudarskih mašina, drobilica i opreme. Visokokvalitetne rudarske mašine iz Turske. Katalog i kontakt.">
+    <meta name="keywords" content="canmak, canmak-mk, rudarske mašine, drobilice, rudarska oprema, turska kompanija, rudarstvo, mašine za sejanje">
+    <meta name="author" content="CANMAK-MK">
+    <meta property="og:title" content="CANMAK-MK - Rudarske mašine">
+    <meta property="og:description" content="Proizvođač visokokvalitetnih rudarskih mašina i opreme">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.canmak-mk.com">
+    <meta property="og:image" content="https://www.canmak-mk.com/images_videos/canMakLogo.webp">
+    <meta name="google-site-verification" content="ТВОЈ_VERIFICATION_CODE">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icons/7.1.0/css/flag-icons.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+    <div class="container">
+        <nav>
+            <div class="logo">CANMAK-MK</div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Početna</a></li>
+                <li><a href="#about">O nama</a></li>
+                <li><a href="#catalog">Katalozi</a></li>
+                <li><a href="#contact">Kontakt</a></li>
+            </ul>
+
+            <div class="language-switcher">
+                <select id="language-select" class="language-select" onchange="changeLanguage(this.value)">
+                    <option value="mk" data-flag="mk">Македонски</option>
+                    <option value="en" data-flag="gb">English</option>
+                    <option value="sq" data-flag="al">Shqip</option>
+                    <option value="ro" data-flag="ro">Română</option>
+                    <option value="rs" data-flag="rs" selected>Srpski</option>
+                    <option value="bg" data-flag="bg">Български</option>
+                </select>
+                <span class="language-icon fi fi-rs" id="flag-icon"></span>
+                <span class="language-arrow"></span>
+            </div>
+
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<section id="home" class="hero">
+    <div class="hero-image">
+        <img src="images_videos/realBannerCanMak_ver2.jpg" alt="CANMAK-MK Rudarske mašine">
+    </div>
+    <div class="container">
+        <div class="hero-content">
+            <div class="canmak-title">
+                <div class="canmak-main">CAN MAK</div>
+                <div class="canmak-sub">LTD.ŞTİ</div>
+            </div>
+            <br>
+            <h1>CANMAK-MK - Najbolje rudarske mašine na tržištu</h1>
+        </div>
+    </div>
+</section>
+
+<section id="about" class="about">
+    <div class="container">
+        <h2>O kompaniji CANMAK</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p>Sa našom stručnošću u sektoru rudarskih mašina i dugogodišnjim iskustvom, ponosni smo što proizvodimo visokokvalitetne drobilice, mašine za sejanje i postrojenja za beton. Kao CANMAK-MK, radimo sa razumevanjem koje pažljivo prati inovacije u sektoru i ima za cilj da ispuni očekivanja klijenata na najvišem nivou. Naša kompanija nudi rešenja za potrebe rudarske, građevinske i industrije reciklaže sa proizvodima zasnovanim na efikasnosti, izdržljivosti i visokim performansama. Zahvaljujući našem širokom asortimanu proizvoda, naprednoj tehnologiji opreme i inženjerskom znanju, mi smo pouzdan partner.</p>
+            </div>
+            <div class="about-image">
+                <img src="/images_videos/imageAbout_us.jpg" alt="Fabrika CANMAK-MK">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="video-carousel">
+    <div class="container">
+        <h2>Naša fabrika u akciji</h2>
+    </div>
+    <div class="carousel-container">
+        <div class="carousel-item">
+            <div class="carousel-video">
+                <video id="video1" src="images_videos/video1.mp4" preload="metadata" muted playsinline></video>
+                <span class="play-pause-btn"><i class="fas fa-play"></i></span>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="carousel-video">
+                <video id="video2" src="images_videos/video2.mp4" preload="metadata" muted playsinline></video>
+                <span class="play-pause-btn"><i class="fas fa-play"></i></span>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="carousel-video">
+                <video id="video3" src="images_videos/video3.mp4" preload="metadata" muted playsinline></video>
+                <span class="play-pause-btn"><i class="fas fa-play"></i></span>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="carousel-video">
+                <video id="video4" src="images_videos/video4.mp4" preload="metadata" muted playsinline></video>
+                <span class="play-pause-btn"><i class="fas fa-play"></i></span>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="carousel-video">
+                <video id="video5" src="images_videos/video5.mp4" preload="metadata" muted playsinline></video>
+                <span class="play-pause-btn"><i class="fas fa-play"></i></span>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="carousel-video">
+                <video id="video6" src="images_videos/video1.mp4" preload="metadata" muted playsinline></video>
+                <span class="play-pause-btn"><i class="fas fa-play"></i></span>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="carousel-video">
+                <video id="video7" src="images_videos/video2.mp4" preload="metadata" muted playsinline></video>
+                <span class="play-pause-btn"><i class="fas fa-play"></i></span>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="carousel-video">
+                <video id="video8" src="images_videos/video3.mp4" preload="metadata" muted playsinline></video>
+                <span class="play-pause-btn"><i class="fas fa-play"></i></span>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="carousel-video">
+                <video id="video9" src="images_videos/video4.mp4" preload="metadata" muted playsinline></video>
+                <span class="play-pause-btn"><i class="fas fa-play"></i></span>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="carousel-video">
+                <video id="video10" src="images_videos/video5.mp4" preload="metadata" muted playsinline></video>
+                <span class="play-pause-btn"><i class="fas fa-play"></i></span>
+            </div>
+        </div>
+    </div>
+    <div class="carousel-controls">
+        <button class="carousel-btn" onclick="pauseCarousel()">Pauza</button>
+        <button class="carousel-btn" onclick="playCarousel()">Pusti</button>
+    </div>
+</section>
+
+<section id="catalog" class="catalog-section">
+    <div class="container">
+        <h2>CANMAK-MK Katalozi</h2>
+        <div class="catalog-container">
+            <p class="catalog-description">
+                Saznajte više o CANMAK-ovim visokokvalitetnim rudarskim mašinama i opremi. U našim katalozima ćete pronaći detaljne specifikacije, tehničke podatke i informacije o svim CANMAK proizvodima.
+            </p>
+            <div class="catalog-grid">
+                <div class="pdf-catalog">
+                    <div class="pdf-icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <h3>CANMAK-MK Katalog za rudarske mašine i fabrike betona 2025</h3>
+                    <p class="pdf-description">
+                        Kompletan katalog svih CANMAK proizvoda sa detaljnim specifikacijama, tehničkim podacima i cenama. Preuzmite naš katalog u PDF formatu da biste saznali sve detalje o CANMAK rudarskim mašinama.
+                    </p>
+                    <div class="catalog-buttons">
+                        <a href="catalogs/CANMAK%20KATALOG%20_A%C4%9EUSTOS%20%202025%20makedonski.pdf" class="btn btn-primary" target="_blank">
+                            <i class="fas fa-eye"></i> Pregledaj katalog
+                        </a>
+                        <a href="catalogs/CANMAK%20KATALOG%20_A%C4%9EUSTOS%20%202025%20makedonski.pdf" class="btn btn-secondary" download>
+                            <i class="fas fa-download"></i> Preuzmi katalog
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="catalog-features">
+                <div class="feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <h4>Kompletan pregled</h4>
+                    <p>Svi CANMAK proizvodi na jednom mestu</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-info-circle"></i>
+                    </div>
+                    <h4>Tehničke specifikacije</h4>
+                    <p>Detaljni tehnički podaci za CANMAK mašine</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-images"></i>
+                    </div>
+                    <h4>Kvalitetne slike</h4>
+                    <p>Detaljne fotografije CANMAK mašina</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="contact" class="contact">
+    <div class="container">
+        <h2>Kontaktirajte nas CANMAK-MK</h2>
+        <div class="contact-content">
+            <div class="contact-info">
+                <h3>Kontakt informacije</h3>
+                <p><strong>Mobilni:</strong> +389 70 351 957</p>
+                <p><strong>Mobilni:</strong> +389 75 428 928</p>
+                <p><strong>E-mail:</strong> kazztrajko7@gmail.com</p>
+                <p><strong>E-mail:</strong> hasannazim132@gmail.com</p>
+            </div>
+            <div class="contact-form">
+                <h3>Pošaljite poruku</h3>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Ime i prezime</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-mail:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Poruka</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit">Pošalji</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="images_videos/canMakLogo.webp" alt="Logo CANMAK-MK">
+            </div>
+            <div class="footer-info">
+                <p>&copy; 2025 CANMAK-MK. Sva prava zadržana.</p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>Ova CANMAK-MK veb stranica je kreirana uz odobrenje turske kompanije CANMAK LTD.</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+    const carousel = document.querySelector('.carousel-container');
+    const allVideos = document.querySelectorAll('.carousel-video video');
+
+    hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        hamburger.classList.toggle('active');
+    });
+
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            hamburger.classList.remove('active');
+        });
+    });
+
+    document.addEventListener('click', (e) => {
+        if (!navLinks.contains(e.target) && !hamburger.contains(e.target)) {
+            navLinks.classList.remove('active');
+            hamburger.classList.remove('active');
+        }
+    });
+
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        alert('Hvala vam na poruci! CANMAK-MK će vas uskoro kontaktirati.');
+        this.reset();
+    });
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            navLinks.classList.remove('active');
+            hamburger.classList.remove('active');
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            window.scrollTo({
+                top: targetElement.offsetTop - 70,
+                behavior: 'smooth'
+            });
+        });
+    });
+
+    function updateFlag() {
+        const languageSelect = document.getElementById('language-select');
+        const flagIcon = document.getElementById('flag-icon');
+        const selectedOption = languageSelect.options[languageSelect.selectedIndex];
+        const flagCode = selectedOption.getAttribute('data-flag');
+        flagIcon.className = 'language-icon fi fi-' + flagCode;
+    }
+
+    function changeLanguage(lang) {
+        if (lang === 'mk') {
+            window.location.href = 'index.html';
+        } else if (lang === 'en') {
+            window.location.href = 'index_en.html';
+        } else if (lang === 'bg') {
+            window.location.href = 'index_bg.html';
+        }
+        else if (lang === 'ro') {
+            window.location.href = 'index_ro.html';
+        }
+        else if (lang === 'rs') {
+            window.location.href = 'index_rs.html';
+        }
+        else if (lang === 'sq') {
+            window.location.href = 'index_sq.html';
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        document.getElementById('language-select').addEventListener('change', updateFlag);
+        updateFlag();
+
+        // Funkcije za kontrolu animacije karusela
+        window.pauseCarousel = function() {
+            carousel.style.animationPlayState = 'paused';
+            allVideos.forEach(video => {
+                video.pause();
+                const container = video.parentElement;
+                const playPauseBtn = container.querySelector('.play-pause-btn');
+                playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
+                container.classList.add('paused');
+                container.classList.remove('playing');
+            });
+        };
+
+        window.playCarousel = function() {
+            carousel.style.animationPlayState = 'running';
+            allVideos.forEach(video => {
+                const playPromise = video.play();
+                if (playPromise !== undefined) {
+                    playPromise.then(() => {
+                        const container = video.parentElement;
+                        const playPauseBtn = container.querySelector('.play-pause-btn');
+                        playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
+                        container.classList.add('playing');
+                        container.classList.remove('paused');
+                    })
+                        .catch(error => {
+                            console.error("Greška pri pokušaju puštanja videa:", error);
+                        });
+                }
+            });
+        };
+
+        // Logika za kontrolu pojedinačnih videa
+        const videoContainers = document.querySelectorAll('.carousel-video');
+
+        videoContainers.forEach(container => {
+            const video = container.querySelector('video');
+            const playPauseBtn = container.querySelector('.play-pause-btn');
+
+            video.removeAttribute('controls');
+
+            function toggleVideoPlayPause() {
+                if (video.paused) {
+                    const playPromise = video.play();
+                    if (playPromise !== undefined) {
+                        playPromise.then(() => {
+                            playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
+                            container.classList.add('playing');
+                            container.classList.remove('paused');
+                        })
+                            .catch(error => {
+                                console.error("Greška pri pokušaju puštanja videa:", error);
+                            });
+                    }
+                } else {
+                    video.pause();
+                    playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
+                    container.classList.add('paused');
+                    container.classList.remove('playing');
+                }
+            }
+
+            playPauseBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                toggleVideoPlayPause();
+            });
+
+            video.addEventListener('click', (e) => {
+                e.stopPropagation();
+                toggleVideoPlayPause();
+            });
+
+            video.addEventListener('ended', () => {
+                playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
+                container.classList.remove('playing');
+                container.classList.add('paused');
+            });
+        });
+    });
+</script>
+</body>
+</html>

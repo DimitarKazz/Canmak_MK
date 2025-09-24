@@ -1,0 +1,912 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+header {
+    background-color: #1a237e;
+    color: white;
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 1.5rem;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #ffc107;
+}
+
+.language-switcher {
+    position: relative;
+    margin-left: 1.5rem;
+}
+
+.language-select {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    padding: 10px 45px 10px 45px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    transition: all 0.3s ease;
+    width: 190px;
+    text-align: center;
+}
+
+.language-select:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.language-select:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.3);
+}
+
+.language-select option {
+    background: #1a237e;
+    color: white;
+}
+
+.language-icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1rem;
+    pointer-events: none;
+}
+
+.language-arrow {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    font-size: 0.8rem;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.hamburger span {
+    height: 3px;
+    width: 25px;
+    background: white;
+    margin-bottom: 4px;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), #333;
+    color: white;
+    padding: 4rem 0;
+    text-align: center;
+    position: relative;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.canmak-title {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.canmak-main {
+    font-size: 4.5rem;
+    font-weight: bold;
+    color: #1a237e;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    line-height: 1.1;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
+}
+
+.canmak-sub {
+    font-size: 1.8rem;
+    color: white;
+    letter-spacing: 1px;
+    margin-top: 5px;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.hero-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+section {
+    padding: 4rem 0;
+}
+
+section h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #1a237e;
+}
+
+.video-carousel {
+    background-color: #e8eaf6;
+    padding: 3rem 0;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Овој дел го прави каруселот да се движи автоматски */
+.carousel-container {
+    display: flex;
+    animation: scroll 40s linear infinite;
+    width: calc(400px * 8);
+}
+
+.carousel-item {
+    flex: 0 0 auto;
+    width: 400px;
+    height: 710px;
+    margin: 0 15px;
+    background: black;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    position: relative;
+    border: 12px solid #222;
+    border-bottom: 40px solid #222;
+    border-top: 40px solid #222;
+}
+
+.carousel-item::before {
+    content: '';
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 6px;
+    background: #333;
+    border-radius: 6px;
+    z-index: 10;
+}
+
+.carousel-video {
+    width: 100%;
+    height: 100%;
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    overflow: hidden;
+}
+
+.carousel-video iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Ова е анимацијата што го движи каруселот */
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-400px * 4)); }
+}
+
+/* Ова го паузира движењето кога курсорот е над него */
+.video-carousel:hover .carousel-container {
+    animation-play-state: paused;
+}
+
+.carousel-controls {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.carousel-btn {
+    background: #1a237e;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.carousel-btn:hover {
+    background: #303f9f;
+}
+
+.about-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.about-text {
+    flex: 1;
+    min-width: 300px;
+    padding-right: 2rem;
+}
+
+.about-image {
+    flex: 1;
+    min-width: 300px;
+    text-align: center;
+}
+
+.about-image img {
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.catalog-section {
+    background-color: #e8eaf6;
+}
+
+.catalog-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.catalog-description {
+    max-width: 800px;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.pdf-catalog {
+    background-color: white;
+    border-radius: 12px;
+    padding: 2.5rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto 2rem auto;
+}
+
+.pdf-icon {
+    font-size: 4rem;
+    color: #e74c3c;
+    margin-bottom: 1.5rem;
+}
+
+.pdf-catalog h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #1a237e;
+}
+
+.pdf-description {
+    margin-bottom: 2rem;
+    color: #555;
+    font-size: 1.1rem;
+}
+
+.catalog-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.8rem 1.8rem;
+    border-radius: 50px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 1.1rem;
+}
+
+.btn-primary {
+    background-color: #1a237e;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #303f9f;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(26, 35, 126, 0.4);
+}
+
+.btn-secondary {
+    background-color: white;
+    color: #1a237e;
+    border: 2px solid #1a237e;
+}
+
+.btn-secondary:hover {
+    background-color: #f5f5f5;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.btn i {
+    margin-right: 0.5rem;
+}
+
+.catalog-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.feature {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    text-align: center;
+}
+
+.feature-icon {
+    font-size: 2.5rem;
+    color: #1a237e;
+    margin-bottom: 1rem;
+}
+
+.feature h4 {
+    margin-bottom: 0.5rem;
+    color: #1a237e;
+}
+
+.catalog-grid {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.contact-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.contact-info {
+    flex: 1;
+    min-width: 300px;
+    margin-bottom: 2rem;
+}
+
+.contact-info h3 {
+    margin-bottom: 1rem;
+    color: #1a237e;
+}
+
+.contact-info p {
+    margin-bottom: 0.5rem;
+}
+
+.contact-form {
+    flex: 1;
+    min-width: 300px;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.form-group textarea {
+    min-height: 150px;
+}
+
+button {
+    background-color: #1a237e;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #303f9f;
+}
+
+footer {
+    background-color: #1a237e;
+    color: white;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-logo {
+    flex: 1;
+    min-width: 300px;
+    text-align: left;
+}
+
+.footer-logo img {
+    max-width: 150px;
+}
+
+.footer-info {
+    flex: 1;
+    min-width: 300px;
+    text-align: right;
+}
+
+.copyright {
+    margin-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 1rem;
+}
+
+@media (max-width: 1024px) {
+    .carousel-item {
+        width: 350px;
+        height: 620px;
+    }
+    .carousel-container {
+        width: calc(350px * 8);
+        animation: scroll 35s linear infinite;
+    }
+    @keyframes scroll {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(calc(-350px * 4)); }
+    }
+}
+
+@media (max-width: 900px) {
+    .about-text, .about-image {
+        flex: 100%;
+        padding-right: 0;
+        margin-bottom: 1.5rem;
+    }
+    .contact-info, .contact-form {
+        flex: 100%;
+        margin-bottom: 2rem;
+    }
+    .footer-logo, .footer-info {
+        flex: 100%;
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+    .catalog-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 768px) {
+    nav {
+        flex-wrap: wrap;
+        position: relative;
+    }
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        background-color: #1a237e;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        padding: 1rem 0;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+    .nav-links.active {
+        display: flex;
+    }
+    .nav-links li {
+        margin: 0.7rem 0;
+    }
+    .nav-links a {
+        display: block;
+        padding: 0.5rem 0;
+        font-size: 1.1rem;
+    }
+    .language-switcher {
+        margin: 1rem auto 0 auto;
+        order: 3;
+        width: 100%;
+        text-align: center;
+    }
+    .language-select {
+        width: 200px;
+        background: rgba(255, 255, 255, 0.15);
+    }
+    .hamburger {
+        display: flex;
+    }
+    .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(6px, 6px);
+    }
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+    .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(6px, -6px);
+    }
+    .hero {
+        min-height: 60vh;
+        padding: 2rem 0;
+    }
+    .hero h1 {
+        font-size: 2rem;
+    }
+    .hero p {
+        font-size: 1rem;
+    }
+    .canmak-main {
+        font-size: 3.5rem;
+    }
+    .canmak-sub {
+        font-size: 1.4rem;
+    }
+    .carousel-item {
+        width: 300px;
+        height: 530px;
+    }
+    .carousel-container {
+        width: calc(300px * 8);
+        animation: scroll 30s linear infinite;
+    }
+    @keyframes scroll {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(calc(-300px * 4)); }
+    }
+    .catalog-buttons {
+        flex-direction: column;
+    }
+    .btn {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+    .pdf-catalog {
+        padding: 1.5rem;
+    }
+    .feature {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .carousel-item {
+        width: 280px;
+        height: 500px;
+        border-width: 10px;
+        border-bottom-width: 35px;
+        border-top-width: 35px;
+    }
+    .carousel-container {
+        width: calc(280px * 8);
+    }
+    @keyframes scroll {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(calc(-280px * 4)); }
+    }
+    .carousel-item::before {
+        top: -20px;
+        width: 50px;
+        height: 5px;
+    }
+    section {
+        padding: 3rem 0;
+    }
+    .hero {
+        padding: 2rem 0;
+        min-height: 50vh;
+    }
+    .video-carousel {
+        padding: 2rem 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        font-size: 1.3rem;
+    }
+    .nav-links a {
+        font-size: 1rem;
+        padding: 0.8rem 0;
+    }
+    .language-select {
+        width: 180px;
+        font-size: 0.85rem;
+        padding: 8px 35px 8px 35px;
+    }
+    .language-icon {
+        left: 10px;
+    }
+    .language-arrow {
+        right: 10px;
+    }
+    .hamburger {
+        display: flex;
+    }
+    .hamburger span {
+        width: 22px;
+        height: 2.5px;
+    }
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+    .canmak-main {
+        font-size: 2.8rem;
+    }
+    .canmak-sub {
+        font-size: 1.2rem;
+    }
+    .carousel-item {
+        width: 250px;
+        height: 445px;
+        border-width: 8px;
+        border-bottom-width: 30px;
+        border-top-width: 30px;
+    }
+    .carousel-container {
+        width: calc(250px * 8);
+    }
+    .carousel-container {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: 15px;
+        padding: 10px;
+    }
+
+
+    .carousel-item {
+        flex: 0 0 auto;
+        width: 320px;
+        scroll-snap-align: start;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+
+    .carousel-video video {
+        width: 100%;
+        height: auto;
+        display: block;
+
+    }
+    .carousel-video {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #000;
+        overflow: hidden;
+    }
+
+    .carousel-video video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .play-button {
+        position: absolute;
+        font-size: 4rem;
+        color: rgba(255,255,255,0.8);
+        cursor: pointer;
+        z-index: 10;
+        transition: transform 0.2s, color 0.2s;
+    }
+
+    .play-button:hover {
+        transform: scale(1.2);
+        color: white;
+    }
+    @keyframes scroll {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(calc(-250px * 4)); }
+    }
+    .carousel-item::before {
+        top: -18px;
+        width: 40px;
+        height: 4px;
+    }
+    .carousel-btn {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+    section h2 {
+        font-size: 1.5rem;
+    }
+    .pdf-catalog h3 {
+        font-size: 1.5rem;
+    }
+    .pdf-icon {
+        font-size: 3rem;
+    }
+    .catalog-features {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 400px) {
+    .carousel-item {
+        width: 220px;
+        height: 390px;
+    }
+    .carousel-container {
+        width: calc(220px * 8);
+    }
+    @keyframes scroll {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(calc(-220px * 4)); }
+    }
+    .hero h1 {
+        font-size: 1.6rem;
+    }
+    .btn {
+        padding: 0.7rem 1.5rem;
+        font-size: 1rem;
+    }
+}
+/* Нови стилови за сопствени копчиња за видео плеер */
+.carousel-video {
+    position: relative; /* Ова е потребно за да се позиционира копчето во центарот */
+}
+
+.carousel-video video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    cursor: pointer; /* Курсорот ќе биде рака кога ќе се помине преку видеото */
+}
+
+.play-pause-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 4rem;
+    color: rgba(255, 255, 255, 0.8);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    z-index: 10;
+}
+
+.play-pause-btn:hover {
+    color: white;
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+/* Кога видеото е пуштено, копчето ќе се скрие */
+.carousel-video.playing .play-pause-btn {
+    opacity: 0;
+}
+
+/* Кога видеото е паузирано, копчето ќе биде видливо */
+.carousel-video.paused .play-pause-btn {
+    opacity: 1;
+}
+
+/* Стил за иконата за пауза */
+.play-pause-btn .fa-pause {
+    display: none;
+}
+
+.carousel-video.playing .play-pause-btn .fa-pause {
+    display: inline;
+}
+
+.carousel-video.playing .play-pause-btn .fa-play {
+    display: none;
+}

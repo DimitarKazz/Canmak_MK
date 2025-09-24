@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CANMAK-MK | Минни машини | Трошачки | Оборудване за минно дело</title>
+    <meta name="description" content="CANMAK-MK - Производител на минни машини, трошачки и оборудване. Висококачествени минни машини от Турция. Каталог и контакт.">
+    <meta name="keywords" content="canmak, canmak-mk, минни машини, трошачки, минно оборудване, турска компания, минно дело, машини за пресяване">
+    <meta name="author" content="CANMAK-MK">
+    <meta property="og:title" content="CANMAK-MK - Минни машини">
+    <meta property="og:description" content="Производител на висококачествени минни машини и оборудване">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.canmak-mk.com">
+    <meta property="og:image" content="https://www.canmak-mk.com/images_videos/canMakLogo.webp">
+    <meta name="google-site-verification" content="ТВОЈ_VERIFICATION_CODE">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icons/7.1.0/css/flag-icons.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+    <div class="container">
+        <nav>
+            <div class="logo">CANMAK-MK</div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Начало</a></li>
+                <li><a href="#about">За нас</a></li>
+                <li><a href="#catalog">Каталози</a></li>
+                <li><a href="#contact">Контакт</a></li>
+            </ul>
+
+            <div class="language-switcher">
+                <select id="language-select" class="language-select" onchange="changeLanguage(this.value)">
+                    <option value="mk" data-flag="mk">Македонски</option>
+                    <option value="en" data-flag="gb">English</option>
+                    <option value="sq" data-flag="al">Shqip</option>
+                    <option value="ro" data-flag="ro">Română</option>
+                    <option value="rs" data-flag="rs">Srpski</option>
+                    <option value="bg" data-flag="bg" selected>Български</option>
+                </select>
+                <span class="language-icon fi fi-bg" id="flag-icon"></span>
+                <span class="language-arrow"></span>
+            </div>
+
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<section id="home" class="hero">
+    <div class="hero-image">
+        <img src="images_videos/realBannerCanMak_ver2.jpg" alt="CANMAK-MK Минни машини">
+    </div>
+    <div class="container">
+        <div class="hero-content">
+            <div class="canmak-title">
+                <div class="canmak-main">CAN MAK</div>
+                <div class="canmak-sub">LTD.ŞTİ</div>
+            </div>
+            <br>
+            <h1>CANMAK-MK - Най-добрите минни машини на пазара</h1>
+        </div>
+    </div>
+</section>
+
+<section id="about" class="about">
+    <div class="container">
+        <h2>За компанията CANMAK</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p>С нашия опит в сектора на минните машини и дългогодишен опит, ние сме горди да произвеждаме висококачествени трошачки, пресяващи машини и бетонови заводи. Като CANMAK-MK, ние работим с разбиране, което внимателно следи иновациите в сектора и има за цел да отговори на очакванията на клиентите на най-високо ниво. Нашата компания предлага решения за нуждите на минната, строителната и рециклиращата индустрия с продукти, базирани на ефективност, издръжливост и висока производителност. Благодарение на нашата широка гама от продукти, усъвършенствана технология на оборудването и инженерни познания, ние сме надежден партньор.</p>
+            </div>
+            <div class="about-image">
+                <img src="/images_videos/imageAbout_us.jpg" alt="Фабрика CANMAK-MK">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="video-carousel">
+    <div class="container">
+        <h2>Нашата фабрика в действие</h2>
+    </div>
+    <div class="carousel-container">
+        <div class="carousel-item">
+            <div class="carousel-video">
+                <video id="video1" src="images_videos/video1.mp4" preload="metadata" muted playsinline></video>
+                <span class="play-pause-btn"><i class="fas fa-play"></i></span>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="carousel-video">
+                <video id="video2" src="images_videos/video2.mp4" preload="metadata" muted playsinline></video>
+                <span class="play-pause-btn"><i class="fas fa-play"></i></span>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="carousel-video">
+                <video id="video3" src="images_videos/video3.mp4" preload="metadata" muted playsinline></video>
+                <span class="play-pause-btn"><i class="fas fa-play"></i></span>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="carousel-video">
+                <video id="video4" src="images_videos/video4.mp4" preload="metadata" muted playsinline></video>
+                <span class="play-pause-btn"><i class="fas fa-play"></i></span>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="carousel-video">
+                <video id="video5" src="images_videos/video5.mp4" preload="metadata" muted playsinline></video>
+                <span class="play-pause-btn"><i class="fas fa-play"></i></span>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="carousel-video">
+                <video id="video6" src="images_videos/video1.mp4" preload="metadata" muted playsinline></video>
+                <span class="play-pause-btn"><i class="fas fa-play"></i></span>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="carousel-video">
+                <video id="video7" src="images_videos/video2.mp4" preload="metadata" muted playsinline></video>
+                <span class="play-pause-btn"><i class="fas fa-play"></i></span>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="carousel-video">
+                <video id="video8" src="images_videos/video3.mp4" preload="metadata" muted playsinline></video>
+                <span class="play-pause-btn"><i class="fas fa-play"></i></span>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="carousel-video">
+                <video id="video9" src="images_videos/video4.mp4" preload="metadata" muted playsinline></video>
+                <span class="play-pause-btn"><i class="fas fa-play"></i></span>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="carousel-video">
+                <video id="video10" src="images_videos/video5.mp4" preload="metadata" muted playsinline></video>
+                <span class="play-pause-btn"><i class="fas fa-play"></i></span>
+            </div>
+        </div>
+    </div>
+    <div class="carousel-controls">
+        <button class="carousel-btn" onclick="pauseCarousel()">Пауза</button>
+        <button class="carousel-btn" onclick="playCarousel()">Пусни</button>
+    </div>
+</section>
+
+<section id="catalog" class="catalog-section">
+    <div class="container">
+        <h2>Каталози на CANMAK-MK</h2>
+        <div class="catalog-container">
+            <p class="catalog-description">
+                Научете повече за висококачествените минни машини и оборудване на CANMAK. В нашите каталози ще намерите подробни спецификации, технически данни и информация за всички продукти на CANMAK.
+            </p>
+            <div class="catalog-grid">
+                <div class="pdf-catalog">
+                    <div class="pdf-icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <h3>Каталог на CANMAK-MK за минни машини и бетонови бази 2025</h3>
+                    <p class="pdf-description">
+                        Цялостен каталог на всички продукти на CANMAK с подробни спецификации, технически данни и цени. Изтеглете нашия каталог в PDF формат, за да научите всички подробности за минните машини на CANMAK.
+                    </p>
+                    <div class="catalog-buttons">
+                        <a href="catalogs/CANMAK%20KATALOG%20_A%C4%9EUSTOS%20%202025%20makedonski.pdf" class="btn btn-primary" target="_blank">
+                            <i class="fas fa-eye"></i> Прегледай каталог
+                        </a>
+                        <a href="catalogs/CANMAK%20KATALOG%20_A%C4%9EUSTOS%20%202025%20makedonski.pdf" class="btn btn-secondary" download>
+                            <i class="fas fa-download"></i> Изтегли каталог
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="catalog-features">
+                <div class="feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <h4>Цялостен преглед</h4>
+                    <p>Всички продукти на CANMAK на едно място</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-info-circle"></i>
+                    </div>
+                    <h4>Технически спецификации</h4>
+                    <p>Подробни технически данни за машините на CANMAK</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-images"></i>
+                    </div>
+                    <h4>Качествени снимки</h4>
+                    <p>Подробни снимки на машините на CANMAK</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="contact" class="contact">
+    <div class="container">
+        <h2>Свържете се с нас CANMAK-MK</h2>
+        <div class="contact-content">
+            <div class="contact-info">
+                <h3>Информация за контакт</h3>
+                <p><strong>Мобилен:</strong> +389 70 351 957</p>
+                <p><strong>Мобилен:</strong> +389 75 428 928</p>
+                <p><strong>Имейл:</strong> kazztrajko7@gmail.com</p>
+                <p><strong>Имейл:</strong> hasannazim132@gmail.com</p>
+            </div>
+            <div class="contact-form">
+                <h3>Изпратете съобщение</h3>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Име и фамилия</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Имейл:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Съобщение</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit">Изпрати</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="images_videos/canMakLogo.webp" alt="Лого на CANMAK-MK">
+            </div>
+            <div class="footer-info">
+                <p>&copy; 2025 CANMAK-MK. Всички права запазени.</p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>Този уебсайт на CANMAK-MK е създаден с одобрението на турската компания CANMAK LTD.</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+    const carousel = document.querySelector('.carousel-container');
+    const allVideos = document.querySelectorAll('.carousel-video video');
+
+    hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        hamburger.classList.toggle('active');
+    });
+
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            hamburger.classList.remove('active');
+        });
+    });
+
+    document.addEventListener('click', (e) => {
+        if (!navLinks.contains(e.target) && !hamburger.contains(e.target)) {
+            navLinks.classList.remove('active');
+            hamburger.classList.remove('active');
+        }
+    });
+
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        alert('Благодарим ви за вашето съобщение! CANMAK-MK ще се свърже с вас скоро.');
+        this.reset();
+    });
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            navLinks.classList.remove('active');
+            hamburger.classList.remove('active');
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            window.scrollTo({
+                top: targetElement.offsetTop - 70,
+                behavior: 'smooth'
+            });
+        });
+    });
+
+    function updateFlag() {
+        const languageSelect = document.getElementById('language-select');
+        const flagIcon = document.getElementById('flag-icon');
+        const selectedOption = languageSelect.options[languageSelect.selectedIndex];
+        const flagCode = selectedOption.getAttribute('data-flag');
+        flagIcon.className = 'language-icon fi fi-' + flagCode;
+    }
+
+    function changeLanguage(lang) {
+        if (lang === 'mk') {
+            window.location.href = 'index.html';
+        } else if (lang === 'en') {
+            window.location.href = 'index_en.html';
+        } else if (lang === 'bg') {
+            window.location.href = 'index_bg.html';
+        }
+        else if (lang === 'ro') {
+            window.location.href = 'index_ro.html';
+        }
+        else if (lang === 'rs') {
+            window.location.href = 'index_rs.html';
+        }
+        else if (lang === 'sq') {
+            window.location.href = 'index_sq.html';
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        document.getElementById('language-select').addEventListener('change', updateFlag);
+        updateFlag();
+
+        window.pauseCarousel = function() {
+            carousel.style.animationPlayState = 'paused';
+            allVideos.forEach(video => {
+                video.pause();
+                const container = video.parentElement;
+                const playPauseBtn = container.querySelector('.play-pause-btn');
+                playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
+                container.classList.add('paused');
+                container.classList.remove('playing');
+            });
+        };
+
+        window.playCarousel = function() {
+            carousel.style.animationPlayState = 'running';
+            allVideos.forEach(video => {
+                const playPromise = video.play();
+                if (playPromise !== undefined) {
+                    playPromise.then(() => {
+                        const container = video.parentElement;
+                        const playPauseBtn = container.querySelector('.play-pause-btn');
+                        playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
+                        container.classList.add('playing');
+                        container.classList.remove('paused');
+                    })
+                        .catch(error => {
+                            console.error("Грешка при опит за възпроизвеждане на видеото:", error);
+                        });
+                }
+            });
+        };
+
+        const videoContainers = document.querySelectorAll('.carousel-video');
+
+        videoContainers.forEach(container => {
+            const video = container.querySelector('video');
+            const playPauseBtn = container.querySelector('.play-pause-btn');
+
+            video.removeAttribute('controls');
+
+            function toggleVideoPlayPause() {
+                if (video.paused) {
+                    const playPromise = video.play();
+                    if (playPromise !== undefined) {
+                        playPromise.then(() => {
+                            playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
+                            container.classList.add('playing');
+                            container.classList.remove('paused');
+                        })
+                            .catch(error => {
+                                console.error("Грешка при опит за възпроизвеждане на видеото:", error);
+                            });
+                    }
+                } else {
+                    video.pause();
+                    playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
+                    container.classList.add('paused');
+                    container.classList.remove('playing');
+                }
+            }
+
+            playPauseBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                toggleVideoPlayPause();
+            });
+
+            video.addEventListener('click', (e) => {
+                e.stopPropagation();
+                toggleVideoPlayPause();
+            });
+
+            video.addEventListener('ended', () => {
+                playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
+                container.classList.remove('playing');
+                container.classList.add('paused');
+            });
+        });
+    });
+</script>
+</body>
+</html>
