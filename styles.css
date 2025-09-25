@@ -214,68 +214,92 @@ section h2 {
     position: relative;
 }
 
-/* Овој дел го прави каруселот да се движи автоматски */
 .carousel-container {
     display: flex;
-    animation: scroll 40s linear infinite;
-    width: calc(400px * 8);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 10px;
+    padding: 10px;
+    cursor: grab;
+    -webkit-overflow-scrolling: touch;
+}
+
+.carousel-container:active {
+    cursor: grabbing;
 }
 
 .carousel-item {
-    flex: 0 0 auto;
-    width: 400px;
-    height: 710px;
-    margin: 0 15px;
-    background: black;
-    border-radius: 24px;
+    flex-shrink: 0;
+    scroll-snap-align: center;
+    width: 50%;
+    max-width: 450px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-    position: relative;
-    border: 12px solid #222;
-    border-bottom: 40px solid #222;
-    border-top: 40px solid #222;
-}
-
-.carousel-item::before {
-    content: '';
-    position: absolute;
-    top: -25px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 60px;
-    height: 6px;
-    background: #333;
-    border-radius: 6px;
-    z-index: 10;
 }
 
 .carousel-video {
+    position: relative;
     width: 100%;
     height: 100%;
-    background: #000;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
-    font-weight: bold;
+    background: #000;
     overflow: hidden;
 }
 
-.carousel-video iframe {
+.carousel-video video {
     width: 100%;
     height: 100%;
-    border: none;
+    object-fit: cover;
+    display: block;
 }
 
-/* Ова е анимацијата што го движи каруселот */
-@keyframes scroll {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(calc(-400px * 4)); }
+.play-pause-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: background-color 0.3s, opacity 0.3s, visibility 0.3s;
 }
 
-/* Ова го паузира движењето кога курсорот е над него */
-.video-carousel:hover .carousel-container {
-    animation-play-state: paused;
+.play-pause-btn:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.carousel-video.playing .play-pause-btn {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.fullscreen-btn {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 10;
+    font-size: 1.2rem;
+    transition: background-color 0.3s;
+}
+
+.fullscreen-btn:hover {
+    background-color: rgba(0, 0, 0, 0.7);
 }
 
 .carousel-controls {
@@ -446,15 +470,6 @@ section h2 {
     color: #1a237e;
 }
 
-.catalog-grid {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    margin-bottom: 2rem;
-    width: 100%;
-    max-width: 1200px;
-}
-
 .contact-content {
     display: flex;
     flex-wrap: wrap;
@@ -481,25 +496,36 @@ section h2 {
     min-width: 300px;
 }
 
-.form-group {
-    margin-bottom: 1rem;
+.contact-card {
+    background-color: white;
+    border-radius: 12px;
+    padding: 2.5rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    max-width: 500px;
+    margin: 0 auto;
 }
 
-.form-group label {
-    display: block;
+.contact-card h3 {
+    color: #1a237e;
     margin-bottom: 0.5rem;
 }
 
-.form-group input,
-.form-group textarea {
-    width: 100%;
-    padding: 0.75rem;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+.contact-card p {
+    margin-bottom: 1.5rem;
+    color: #555;
 }
 
-.form-group textarea {
-    min-height: 150px;
+.contact-icon {
+    font-size: 4rem;
+    color: #1a237e;
+    margin-bottom: 1rem;
+}
+
+.email-link-btn {
+    width: 100%;
+    max-width: 250px;
+    margin-top: 1rem;
 }
 
 button {
@@ -550,21 +576,6 @@ footer {
     margin-top: 2rem;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     padding-top: 1rem;
-}
-
-@media (max-width: 1024px) {
-    .carousel-item {
-        width: 350px;
-        height: 620px;
-    }
-    .carousel-container {
-        width: calc(350px * 8);
-        animation: scroll 35s linear infinite;
-    }
-    @keyframes scroll {
-        0% { transform: translateX(0); }
-        100% { transform: translateX(calc(-350px * 4)); }
-    }
 }
 
 @media (max-width: 900px) {
@@ -654,18 +665,6 @@ footer {
     .canmak-sub {
         font-size: 1.4rem;
     }
-    .carousel-item {
-        width: 300px;
-        height: 530px;
-    }
-    .carousel-container {
-        width: calc(300px * 8);
-        animation: scroll 30s linear infinite;
-    }
-    @keyframes scroll {
-        0% { transform: translateX(0); }
-        100% { transform: translateX(calc(-300px * 4)); }
-    }
     .catalog-buttons {
         flex-direction: column;
     }
@@ -682,28 +681,6 @@ footer {
 }
 
 @media (max-width: 600px) {
-    .carousel-item {
-        width: 280px;
-        height: 500px;
-        border-width: 10px;
-        border-bottom-width: 35px;
-        border-top-width: 35px;
-    }
-    .carousel-container {
-        width: calc(280px * 8);
-    }
-    @keyframes scroll {
-        0% { transform: translateX(0); }
-        100% { transform: translateX(calc(-280px * 4)); }
-    }
-    .carousel-item::before {
-        top: -20px;
-        width: 50px;
-        height: 5px;
-    }
-    section {
-        padding: 3rem 0;
-    }
     .hero {
         padding: 2rem 0;
         min-height: 50vh;
@@ -748,83 +725,6 @@ footer {
     .canmak-sub {
         font-size: 1.2rem;
     }
-    .carousel-item {
-        width: 250px;
-        height: 445px;
-        border-width: 8px;
-        border-bottom-width: 30px;
-        border-top-width: 30px;
-    }
-    .carousel-container {
-        width: calc(250px * 8);
-    }
-    .carousel-container {
-        display: flex;
-        overflow-x: auto;
-        scroll-snap-type: x mandatory;
-        gap: 15px;
-        padding: 10px;
-    }
-
-
-    .carousel-item {
-        flex: 0 0 auto;
-        width: 320px;
-        scroll-snap-align: start;
-        border-radius: 10px;
-        overflow: hidden;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    }
-
-    .carousel-video video {
-        width: 100%;
-        height: auto;
-        display: block;
-
-    }
-    .carousel-video {
-        width: 100%;
-        height: 100%;
-        position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: #000;
-        overflow: hidden;
-    }
-
-    .carousel-video video {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-
-    .play-button {
-        position: absolute;
-        font-size: 4rem;
-        color: rgba(255,255,255,0.8);
-        cursor: pointer;
-        z-index: 10;
-        transition: transform 0.2s, color 0.2s;
-    }
-
-    .play-button:hover {
-        transform: scale(1.2);
-        color: white;
-    }
-    @keyframes scroll {
-        0% { transform: translateX(0); }
-        100% { transform: translateX(calc(-250px * 4)); }
-    }
-    .carousel-item::before {
-        top: -18px;
-        width: 40px;
-        height: 4px;
-    }
-    .carousel-btn {
-        padding: 8px 16px;
-        font-size: 0.9rem;
-    }
     section h2 {
         font-size: 1.5rem;
     }
@@ -840,17 +740,6 @@ footer {
 }
 
 @media (max-width: 400px) {
-    .carousel-item {
-        width: 220px;
-        height: 390px;
-    }
-    .carousel-container {
-        width: calc(220px * 8);
-    }
-    @keyframes scroll {
-        0% { transform: translateX(0); }
-        100% { transform: translateX(calc(-220px * 4)); }
-    }
     .hero h1 {
         font-size: 1.6rem;
     }
@@ -859,54 +748,24 @@ footer {
         font-size: 1rem;
     }
 }
-/* Нови стилови за сопствени копчиња за видео плеер */
-.carousel-video {
-    position: relative; /* Ова е потребно за да се позиционира копчето во центарот */
+info-group {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
 }
 
-.carousel-video video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    cursor: pointer; /* Курсорот ќе биде рака кога ќе се помине преку видеото */
+.contact-icon-small {
+    font-size: 1.2rem;
+    color: #1a237e;
+    width: 25px;
+    text-align: center;
 }
 
-.play-pause-btn {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 4rem;
-    color: rgba(255, 255, 255, 0.8);
-    cursor: pointer;
-    transition: all 0.2s ease;
-    z-index: 10;
-}
-
-.play-pause-btn:hover {
-    color: white;
-    transform: translate(-50%, -50%) scale(1.1);
-}
-
-/* Кога видеото е пуштено, копчето ќе се скрие */
-.carousel-video.playing .play-pause-btn {
-    opacity: 0;
-}
-
-/* Кога видеото е паузирано, копчето ќе биде видливо */
-.carousel-video.paused .play-pause-btn {
-    opacity: 1;
-}
-
-/* Стил за иконата за пауза */
-.play-pause-btn .fa-pause {
-    display: none;
-}
-
-.carousel-video.playing .play-pause-btn .fa-pause {
-    display: inline;
-}
-
-.carousel-video.playing .play-pause-btn .fa-play {
-    display: none;
+.factory-contact-title {
+    margin-top: 2rem;
+    font-size: 1.5rem;
+    color: #1a237e;
+    text-transform: uppercase;
+    font-weight: bold;
 }
